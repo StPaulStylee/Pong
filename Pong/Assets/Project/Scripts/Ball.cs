@@ -4,14 +4,20 @@ using UnityEngine;
 
 public class Ball : MonoBehaviour
 {
-    public float Speed = 1f;
+    public float MinXSpeed = 0.8f;
+    public float MaxXSpeed = 1.2f;
+    public float MinYSpeed = 0.8f;
+    public float MaxYSpeed = 1.2f;
 
     private Rigidbody2D ballRigidBody;
     // Start is called before the first frame update
     void Start()
     {
         ballRigidBody = GetComponent<Rigidbody2D>( );
-        ballRigidBody.velocity = new Vector2(-0.5f, Speed);
+        // Set the starting velocity to a random number between our defined ranges
+        // Random.value returns a float between 0 and 1, so if its below 0.5 make it go down, otherwise go up
+        ballRigidBody.velocity = new Vector2(Random.Range(MinXSpeed, MaxXSpeed) * (Random.value > 0.5f ? -1 : 1), 
+                                                                      Random.Range(MinYSpeed, MaxYSpeed) * (Random.value > 0.5f ? -1 : 1));
     }
 
     // Update is called once per frame
