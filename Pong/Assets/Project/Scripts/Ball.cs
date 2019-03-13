@@ -10,6 +10,8 @@ public class Ball : MonoBehaviour
     public float MaxYSpeed = 1.2f;
     // 10% difficulty increase
     public float DifficultyMultiplier = 1.1f;
+    // Will be private once settled on text
+    public string[] DifficultyMessage = {"Easy Peasy", "Average Joe", "Ok, now I'm Impressed", "Show Off!", "INSANE!!!"};
 
     private Rigidbody2D ballRigidBody;
     // Start is called before the first frame update
@@ -56,6 +58,7 @@ public class Ball : MonoBehaviour
             {
                 ballRigidBody.velocity = new Vector2(-ballRigidBody.velocity.x * DifficultyMultiplier, ballRigidBody.velocity.y * DifficultyMultiplier);
             }
+
         }
     }
 }
