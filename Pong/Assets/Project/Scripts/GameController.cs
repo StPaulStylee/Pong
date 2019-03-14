@@ -17,6 +17,31 @@ public class GameController : MonoBehaviour
     private Ball currentBall;
     private int Score1 = 0;
     private int Score2 = 0;
+
+    // static instance of Game Manager that can be accessed anywhere
+    public static GameController Instance;
+
+    // Our HUD Instance - remember, you could make this a Singleton in the HudManager class if desired
+    //private HudManager hud;
+    // Called when the script is loaded
+    private void Awake( )
+    {
+        // Singleton Pattern
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        // Make sure that it is equal to the current object
+        else if (Instance != this)
+        {
+            // Destroy the current game object because we only need one and we already have it
+            Destroy(gameObject);
+        }
+        // Don't destroy the gameObject when scene is changed - this is done by default
+        DontDestroyOnLoad(gameObject);
+        //hud = FindObjectOfType<HudManager>( );
+    }
+
     // Start is called before the first frame update
     void Start()
     {
