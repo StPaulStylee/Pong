@@ -6,11 +6,6 @@ public class Paddle : MonoBehaviour
 {
     public float Speed = 1f;
     public int PlayerIndex = 1;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()

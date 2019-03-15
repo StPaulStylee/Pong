@@ -24,12 +24,6 @@ public class Ball : MonoBehaviour
                                              Random.Range(MinYSpeed, MaxYSpeed) * (Random.value > 0.5f ? -1 : 1));
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     // This doesn't have to be called in another method because it calls itself when it enters a collider... Hence the name ; )
     private void OnTriggerEnter2D(Collider2D collision)
     {

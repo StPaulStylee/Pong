@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Limit
   - Paddle
+  - Ball
   layers:
   - Default
   - TransparentFX

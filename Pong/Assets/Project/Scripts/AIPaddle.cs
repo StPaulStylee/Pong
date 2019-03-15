@@ -4,18 +4,23 @@ using UnityEngine;
 
 public class AIPaddle : MonoBehaviour
 {
-    public Ball currentBall;
+    public GameObject currentBall;
+    private Vector2 startPosition;
     // Start is called before the first frame update
-    void Start()
+    void Start( )
     {
-        currentBall = GameController.Instance.BallPrefab.GetComponent<Ball>( );
+        startPosition = transform.position;
     }
 
     // Update is called once per frame
     void Update()
     {
-        // set the paddle location equal to the balls y location
-        GetComponent<Rigidbody2D>( ).velocity = new Vector2(0, currentBall.transform.position.y);
-        Debug.Log(currentBall.transform.position.y);
+        currentBall = GameObject.FindWithTag("Ball");
+        if (currentBall != null)
+        {
+            // set the paddle location equal to the balls y location
+            GetComponent<Rigidbody2D>( ).position = new Vector2(startPosition.x, currentBall.transform.position.y);
+            Debug.Log(currentBall.transform.position.y);
+        }
     }
 }
