@@ -356,6 +356,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6fe1ae6fc735ab4899a3fc55f4dcd85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Speed: 3
   currentBall: {fileID: 0}
 --- !u!1 &519420028
 GameObject:
