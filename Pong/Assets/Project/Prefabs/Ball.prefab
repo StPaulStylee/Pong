@@ -130,7 +130,7 @@ MonoBehaviour:
   MaxXSpeed: 1.2
   MinYSpeed: 0.8
   MaxYSpeed: 1.2
-  DifficultyMultiplier: 1.1
+  DifficultyMultiplier: 1.5
   DifficultyMessage:
   - Easy Peasy
   - Average Joe
@@ -182,7 +182,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!82 &1462823952
 AudioSource:
