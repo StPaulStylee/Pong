@@ -17,21 +17,19 @@ public class AIPaddle : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (currentBall == null)
         {
             Debug.Log("FOUND THE NEW BALL!");
             currentBall = GameObject.FindWithTag("Ball");
         }
-
         if (currentBall != null)
         {
             Vector2 ballPosition = currentBall.transform.position;
             Vector2 paddlePosition = this.transform.position;
             Vector2 targetPosition = new Vector2(startPosition.x, ballPosition.y);
-            this.transform.position = Vector2.SmoothDamp(this.transform.position, targetPosition, 
-                                                         ref velocity, SmoothTime, Speed);
+            this.transform.position = Vector2.SmoothDamp(this.transform.position, targetPosition, ref velocity, SmoothTime, Speed);
         }
     }
 }
