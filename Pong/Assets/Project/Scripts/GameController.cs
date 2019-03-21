@@ -9,6 +9,7 @@ public class GameController : MonoBehaviour
     public GameObject BallPrefab;
     public Text Score1Text;
     public Text Score2Text;
+    public Text BallVelocityText;
     // The location where we want to check if the ball has went beyond for scoring porpoises
     // I don't think this should be public so change it unless you are given a reason
     public float ScoreCoordinates = 3.3f;
@@ -17,6 +18,7 @@ public class GameController : MonoBehaviour
     private Ball currentBall;
     private int Score1 = 0;
     private int Score2 = 0;
+    private Vector2 ballVelocity;
 
     // static instance of Game Manager that can be accessed anywhere
     public static GameController Instance;
@@ -54,6 +56,7 @@ public class GameController : MonoBehaviour
     {
         if (currentBall != null)
         {
+            UpdateVelocityMessage( );
             if (currentBall.transform.position.x > ScoreCoordinates)
             {
                 Score1++;
@@ -86,9 +89,19 @@ public class GameController : MonoBehaviour
         currentBall.transform.position = Vector2.zero;
     }
 
+    private void UpdateDifficultyMessage( )
+    {
+
+    }
+
     private void UpdateScore( )
     {
         Score1Text.text = Score1.ToString( );
         Score2Text.text = Score2.ToString( );
+    }
+
+    private void UpdateVelocityMessage()
+    {
+        BallVelocityText.text = "Speed: " + Mathf.Abs(currentBall.ballVelocity.x);
     }
 }
