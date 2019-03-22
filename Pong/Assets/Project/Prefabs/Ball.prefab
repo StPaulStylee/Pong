@@ -126,17 +126,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8ce4a21e8f980d4a80cfa447c80a090, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MinXSpeed: 3
-  MaxXSpeed: 3
-  MinYSpeed: 3
-  MaxYSpeed: 3
+  MinXSpeed: 0.8
+  MaxXSpeed: 1.2
+  MinYSpeed: 0.8
+  MaxYSpeed: 1.2
   DifficultyMultiplier: 1.1
   DifficultyMessage:
   - Easy Peasy
   - Average Joe
-  - Ok, now I'm Impressed
+  - Meh
+  - Impressive
   - Show Off!
   - INSANE!!!
+  DifficultyMessageSelected: 
   ballVelocity: {x: 0, y: 0}
 --- !u!61 &1508136736155206022
 BoxCollider2D:

@@ -474,6 +474,7 @@ MonoBehaviour:
   Score1Text: {fileID: 1835093818}
   Score2Text: {fileID: 1653709238}
   BallVelocityText: {fileID: 897723997}
+  DifficultyText: {fileID: 2142201965}
   ScoreCoordinates: 3.3
 --- !u!4 &854103733
 Transform:
@@ -1222,7 +1223,7 @@ GameObject:
   - component: {fileID: 2142201966}
   - component: {fileID: 2142201965}
   m_Layer: 5
-  m_Name: DifficultyMessage
+  m_Name: DifficultyText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

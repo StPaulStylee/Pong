@@ -13,18 +13,23 @@ public class Ball : MonoBehaviour
     // Will be private once settled on text
     public string[] DifficultyMessage = {"Easy Peasy", "Average Joe", "Meh", "Impressive", "Show Off!", "INSANE!!!"};
 
+    [SerializeField]
+    public string DifficultyMessageSelected { get; set; }
+
     private Rigidbody2D ballRigidBody;
-    public Vector2 ballVelocity;
+    // For development purposes only
+    public float ballSpeed;
     // Start is called before the first frame update
     void Start()
     {
+        DifficultyMessageSelected = DifficultyMessage[0];
         ballRigidBody = GetComponent<Rigidbody2D>( );
         // Set the starting velocity to a random number between our defined ranges
         // Random.value returns a float between 0 and 1, so if its below 0.5 make it go down, otherwise go up
         ballRigidBody.velocity = new Vector2(Random.Range(MinXSpeed, MaxXSpeed) * (Random.value > 0.5f ? -1 : 1), 
                                              Random.Range(MinYSpeed, MaxYSpeed) * (Random.value > 0.5f ? -1 : 1));
         // For development purposes
-        ballVelocity = ballRigidBody.velocity;
+        ballSpeed = Mathf.Abs(ballRigidBody.velocity.x);
     }
 
     // This doesn't have to be called in another method because it calls itself when it enters a collider... Hence the name ; )
@@ -55,7 +60,36 @@ public class Ball : MonoBehaviour
             {
                 ballRigidBody.velocity = new Vector2(-ballRigidBody.velocity.x * DifficultyMultiplier, ballRigidBody.velocity.y * DifficultyMultiplier);
             }
-            ballVelocity = ballRigidBody.velocity;
+            ballSpeed = Mathf.Abs(ballRigidBody.velocity.x);
+            SetDifficultyMessage( );
+        }
+    }
+
+    private void SetDifficultyMessage( )
+    {
+        if (this.ballSpeed < 2)
+        {
+            DifficultyMessageSelected = DifficultyMessage[0];
+        }
+        else if (this.ballSpeed >= 2 && this.ballSpeed < 2.6)
+        {
+            DifficultyMessageSelected = DifficultyMessage[1];
+        }
+        else if (this.ballSpeed >= 2.6 && this.ballSpeed < 5)
+        {
+            DifficultyMessageSelected = DifficultyMessage[2];
+        }
+        else if (this.ballSpeed >= 5 && this.ballSpeed < 7)
+        {
+            DifficultyMessageSelected = DifficultyMessage[3];
+        }
+        else if (this.ballSpeed >= 7 && this.ballSpeed < 9)
+        {
+            DifficultyMessageSelected = DifficultyMessage[4];
+        }
+        else
+        {
+            DifficultyMessageSelected = DifficultyMessage[5];
         }
     }
 }
