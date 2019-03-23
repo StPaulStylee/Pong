@@ -138,8 +138,7 @@ MonoBehaviour:
   - Impressive
   - Show Off!
   - INSANE!!!
-  DifficultyMessageSelected: 
-  ballVelocity: {x: 0, y: 0}
+  ballSpeed: 0
 --- !u!61 &1508136736155206022
 BoxCollider2D:
   m_ObjectHideFlags: 0

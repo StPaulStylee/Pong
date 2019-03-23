@@ -9,7 +9,6 @@ public class GameController : MonoBehaviour
     public GameObject BallPrefab;
     public Text Score1Text;
     public Text Score2Text;
-    public Text BallVelocityText;
     public Text DifficultyText;
     // The location where we want to check if the ball has went beyond for scoring porpoises
     // I don't think this should be public so change it unless you are given a reason

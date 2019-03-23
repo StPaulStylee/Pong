@@ -13,7 +13,6 @@ public class Ball : MonoBehaviour
     // Will be private once settled on text
     public string[] DifficultyMessage = {"Easy Peasy", "Average Joe", "Meh", "Impressive", "Show Off!", "INSANE!!!"};
 
-    [SerializeField]
     public string DifficultyMessageSelected { get; set; }
 
     private Rigidbody2D ballRigidBody;
@@ -40,7 +39,7 @@ public class Ball : MonoBehaviour
         {
             // If the position of the limit on the y axis is greater than the ball's y axis position we know its the top limit
             // Also, check to see that the ball is moving upwards
-            if (collision.transform.position.y > transform.position.y && ballRigidBody.velocity.y > 0 )
+            if (collision.transform.position.y > transform.position.y && ballRigidBody.velocity.y > 0)
             {
                 // Maintain the balls velocity on x, but inverse it's velocity on y
                 ballRigidBody.velocity = new Vector2(ballRigidBody.velocity.x, -ballRigidBody.velocity.y);
@@ -65,6 +64,38 @@ public class Ball : MonoBehaviour
         }
     }
 
+    //private void OnCollisionEnter2D(Collision2D collision)
+    //{
+    //    GetComponent<AudioSource>( ).Play( );
+    //    if (collision.tag == "Limit")
+    //    {
+    //        // If the position of the limit on the y axis is greater than the ball's y axis position we know its the top limit
+    //        // Also, check to see that the ball is moving upwards
+    //        if (collision.transform.position.y > transform.position.y && ballRigidBody.velocity.y > 0)
+    //        {
+    //            // Maintain the balls velocity on x, but inverse it's velocity on y
+    //            ballRigidBody.velocity = new Vector2(ballRigidBody.velocity.x, -ballRigidBody.velocity.y);
+    //        }
+    //        if (collision.transform.position.y < transform.position.y && ballRigidBody.velocity.y < 0)
+    //        {
+    //            ballRigidBody.velocity = new Vector2(ballRigidBody.velocity.x, -ballRigidBody.velocity.y);
+    //        }
+    //    }
+    //    else if (collision.tag == "Paddle")
+    //    {
+    //        if (collision.transform.position.x < transform.position.x && ballRigidBody.velocity.x < 0)
+    //        {
+    //            ballRigidBody.velocity = new Vector2(-ballRigidBody.velocity.x * DifficultyMultiplier, ballRigidBody.velocity.y * DifficultyMultiplier);
+    //        }
+    //        if (collision.transform.position.x > transform.position.x && ballRigidBody.velocity.x > 0)
+    //        {
+    //            ballRigidBody.velocity = new Vector2(-ballRigidBody.velocity.x * DifficultyMultiplier, ballRigidBody.velocity.y * DifficultyMultiplier);
+    //        }
+    //        ballSpeed = Mathf.Abs(ballRigidBody.velocity.x);
+    //        SetDifficultyMessage( );
+    //    }
+    //}
+
     private void SetDifficultyMessage( )
     {
         if (this.ballSpeed < 2)
@@ -75,11 +106,11 @@ public class Ball : MonoBehaviour
         {
             DifficultyMessageSelected = DifficultyMessage[1];
         }
-        else if (this.ballSpeed >= 2.6 && this.ballSpeed < 5)
+        else if (this.ballSpeed >= 2.6 && this.ballSpeed < 4.6)
         {
             DifficultyMessageSelected = DifficultyMessage[2];
         }
-        else if (this.ballSpeed >= 5 && this.ballSpeed < 7)
+        else if (this.ballSpeed >= 4.6 && this.ballSpeed < 7)
         {
             DifficultyMessageSelected = DifficultyMessage[3];
         }
