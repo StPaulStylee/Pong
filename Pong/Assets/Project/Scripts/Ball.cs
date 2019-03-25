@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Ball : MonoBehaviour
 {
@@ -10,24 +8,20 @@ public class Ball : MonoBehaviour
     public float MaxYSpeed = 1.2f;
     // 10% difficulty increase
     public float DifficultyMultiplier = 1.1f;
-    // Will be private once settled on text
-    public string[] DifficultyMessage = {"Easy Peasy", "Average Joe", "Meh", "Impressive", "Show Off!", "INSANE!!!"};
+    [SerializeField]
+    private string[] DifficultyMessage = {"Easy Peasy", "Average Joe", "Meh", "Impressive", "Show Off!", "INSANE!!!"};
 
     public string DifficultyMessageSelected { get; set; }
 
     private Rigidbody2D ballRigidBody;
-    // For development purposes only
     public float ballSpeed;
     // Start is called before the first frame update
     void Start()
     {
         DifficultyMessageSelected = DifficultyMessage[0];
         ballRigidBody = GetComponent<Rigidbody2D>( );
-        // Set the starting velocity to a random number between our defined ranges
-        // Random.value returns a float between 0 and 1, so if its below 0.5 make it go down, otherwise go up
-        ballRigidBody.velocity = new Vector2(Random.Range(MinXSpeed, MaxXSpeed) * (Random.value > 0.5f ? -1 : 1), 
-                                             Random.Range(MinYSpeed, MaxYSpeed) * (Random.value > 0.5f ? -1 : 1));
-        // For development purposes
+        SetBallStartingVelocity( );
+        // Used to set difficulty message
         ballSpeed = Mathf.Abs(ballRigidBody.velocity.x);
     }
 
@@ -95,6 +89,14 @@ public class Ball : MonoBehaviour
     //        SetDifficultyMessage( );
     //    }
     //}
+
+    private void SetBallStartingVelocity( )
+    {
+        // Set the starting velocity to a random number between our defined ranges
+        // Random.value returns a float between 0 and 1, so if its below 0.5 make it go down, otherwise go up
+        ballRigidBody.velocity = new Vector2(Random.Range(MinXSpeed, MaxXSpeed) * (Random.value > 0.5f ? -1 : 1),
+                                             Random.Range(MinYSpeed, MaxYSpeed) * (Random.value > 0.5f ? -1 : 1));
+    }
 
     private void SetDifficultyMessage( )
     {

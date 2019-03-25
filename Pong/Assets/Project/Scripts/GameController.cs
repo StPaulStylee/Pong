@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
@@ -11,8 +9,7 @@ public class GameController : MonoBehaviour
     public Text Score2Text;
     public Text DifficultyText;
     // The location where we want to check if the ball has went beyond for scoring porpoises
-    // I don't think this should be public so change it unless you are given a reason
-    public float ScoreCoordinates = 3.3f;
+    private float ScoreCoordinates = 3.3f;
 
     // This is a reference to our Ball component/script that lives in our BallPrefab
     private Ball currentBall;
@@ -22,8 +19,6 @@ public class GameController : MonoBehaviour
     // static instance of Game Manager that can be accessed anywhere
     public static GameController Instance;
 
-    // Our HUD Instance - remember, you could make this a Singleton in the HudManager class if desired
-    //private HudManager hud;
     // Called when the script is loaded
     private void Awake( )
     {
@@ -58,7 +53,7 @@ public class GameController : MonoBehaviour
             if (currentBall.transform.position.x > ScoreCoordinates)
             {
                 Score1++;
-                Score1Text.text = Score1.ToString( );
+                //Score1Text.text = Score1.ToString( );
                 // Always be sure to Destroy the ball before spawning the next
                 // This would be a great opporunity to try implementings an object pool 
                 Destroy(currentBall.gameObject);
@@ -68,7 +63,7 @@ public class GameController : MonoBehaviour
             else if (currentBall.transform.position.x < -ScoreCoordinates)
             {
                 Score2++;
-                Score2Text.text = Score2.ToString( );
+                //Score2Text.text = Score2.ToString( );
                 Destroy(currentBall.gameObject);
                 SpawnBall( );
                 UpdateScore( );

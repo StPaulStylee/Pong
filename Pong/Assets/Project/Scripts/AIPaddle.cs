@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class AIPaddle : MonoBehaviour
 {
@@ -21,15 +19,19 @@ public class AIPaddle : MonoBehaviour
     {
         if (currentBall == null)
         {
-            Debug.Log("FOUND THE NEW BALL!");
             currentBall = GameObject.FindWithTag("Ball");
         }
         if (currentBall != null)
         {
-            Vector2 ballPosition = currentBall.transform.position;
-            Vector2 paddlePosition = this.transform.position;
-            Vector2 targetPosition = new Vector2(startPosition.x, ballPosition.y);
-            this.transform.position = Vector2.SmoothDamp(this.transform.position, targetPosition, ref velocity, SmoothTime, Speed);
+            MoveAiPaddle( );
         }
+    }
+
+    private void MoveAiPaddle()
+    {
+        Vector2 ballPosition = currentBall.transform.position;
+        Vector2 paddlePosition = this.transform.position;
+        Vector2 targetPosition = new Vector2(startPosition.x, ballPosition.y);
+        this.transform.position = Vector2.SmoothDamp(this.transform.position, targetPosition, ref velocity, SmoothTime, Speed);
     }
 }
