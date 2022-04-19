@@ -1,0 +1,115 @@
+Using pre-set license
+Built from '2020.3/staging' branch; Version is '2020.3.8f1 (507919d4fff5) revision 5273881'; Using compiler version '192528614'; Build Type 'Release'
+OS: 'Windows 10 Pro; OS build 19043.1110; Version 2009; 64bit' Language: 'en' Physical Memory: 32701 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
+
+ COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Editor\2020.3.8f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker0
+-projectPath
+E:/Jeff/Unity/CompletedProjects/ZenvaPong/Pong
+-logFile
+Logs/AssetImportWorker0.log
+-srvPort
+65070
+Successfully changed project path to: E:/Jeff/Unity/CompletedProjects/ZenvaPong/Pong
+E:/Jeff/Unity/CompletedProjects/ZenvaPong/Pong
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 35.75 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2020.3.8f1 (507919d4fff5)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Editor/2020.3.8f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path E:/Jeff/Unity/CompletedProjects/ZenvaPong/Pong/Assets
+GfxDevice: creating device client; threaded=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce GTX 1080 Ti (ID=0x1b06)
+    Vendor:   
+    VRAM:     11127 MB
+    Driver:   27.21.14.6589
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Editor/2020.3.8f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Editor/2020.3.8f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'C:/Program Files/Unity/Editor/2020.3.8f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56500
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Editor/2020.3.8f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Editor/2020.3.8f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.001837 seconds.
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 29.62 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.049 seconds
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.002309 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.50 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.820 seconds
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.03 seconds
+Refreshing native plugins compatible for Editor in 0.49 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1790 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 76.6 MB.
+System memory in use after: 76.7 MB.
+
+Unloading 53 unused Assets to reduce memory usage. Loaded Objects now: 2200.
+Total: 4.254900 ms (FindLiveObjects: 0.146000 ms CreateObjectMapping: 0.053300 ms MarkObjects: 3.993200 ms  DeleteObjects: 0.061400 ms)
+
+========================================================================
+Received Import Request.
+  path: Assets/Project/Scripts/Ball.cs
+  artifactKey: Guid(e8ce4a21e8f980d4a80cfa447c80a090) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Scripts/Ball.cs using Guid(e8ce4a21e8f980d4a80cfa447c80a090) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '90056f46376d7a22e054e68de84df3df') in 0.093468 seconds
+  Import took 0.153047 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 10.196565 seconds.
+  path: Assets/PongAssets/Sounds
+  artifactKey: Guid(dd50b9b6e6c198e47a3c98c47a9b9293) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PongAssets/Sounds using Guid(dd50b9b6e6c198e47a3c98c47a9b9293) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6c7ee5d4dfb454c311d0d98e662b4ac4') in 0.027294 seconds
+  Import took 0.029537 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.504386 seconds.
+  path: Assets/PongAssets/Sounds/159376__greenhourglass__boing1.wav
+  artifactKey: Guid(b542be2cb236e7d4493d90b946aaee3b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PongAssets/Sounds/159376__greenhourglass__boing1.wav using Guid(b542be2cb236e7d4493d90b946aaee3b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '925fbb3e17f83a537d401b9eade827ef') in 0.083493 seconds
+  Import took 0.085843 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 16.908721 seconds.
+  path: Assets/Project/Prefabs/Ball.prefab
+  artifactKey: Guid(2ef291f289a4cd348be7c704e5940eee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Prefabs/Ball.prefab using Guid(2ef291f289a4cd348be7c704e5940eee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f834ab02c9189a4e97bd4b72fe36510f') in 0.023103 seconds
+  Import took 0.053782 seconds .
+
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 7.33 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 42 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 45.3 MB.
+System memory in use after: 45.4 MB.
+
+Unloading 42 unused Assets to reduce memory usage. Loaded Objects now: 2209.
+Total: 4.906300 ms (FindLiveObjects: 0.160800 ms CreateObjectMapping: 0.056900 ms MarkObjects: 4.654100 ms  DeleteObjects: 0.033100 ms)
+
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file

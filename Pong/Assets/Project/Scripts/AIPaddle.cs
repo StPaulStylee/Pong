@@ -2,10 +2,11 @@
 
 public class AIPaddle : MonoBehaviour
 {
+  [Tooltip("The speed at which the AIPaddle can move. This is essentially a difficulty setting")]
     public float Speed = 1f;
-    public GameObject currentBall;
 
-    private float SmoothTime = 0.01f;
+    private GameObject currentBall;
+    private float smoothTime = 0.01f;
     private Vector2 startPosition;
     private Vector2 velocity = Vector2.zero;
     // Start is called before the first frame update
@@ -14,7 +15,6 @@ public class AIPaddle : MonoBehaviour
         startPosition = transform.position;
     }
 
-    // Update is called once per frame
     void FixedUpdate()
     {
         if (currentBall == null)
@@ -30,8 +30,7 @@ public class AIPaddle : MonoBehaviour
     private void MoveAiPaddle()
     {
         Vector2 ballPosition = currentBall.transform.position;
-        Vector2 paddlePosition = this.transform.position;
         Vector2 targetPosition = new Vector2(startPosition.x, ballPosition.y);
-        this.transform.position = Vector2.SmoothDamp(this.transform.position, targetPosition, ref velocity, SmoothTime, Speed);
+        this.transform.position = Vector2.SmoothDamp(this.transform.position, targetPosition, ref velocity, smoothTime, Speed);
     }
 }
